@@ -1,0 +1,800 @@
+/* リセットとベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Kaku Gothic Pro', 'メイリオ', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #8e44ad;
+}
+
+.logo h1 span {
+    color: #8e44ad;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #8e44ad;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart-icon {
+    font-size: 1.5rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+/* ヒーローセクション */
+.hero {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #8e44ad;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #7d3c98;
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+/* 商品セクション */
+.products {
+    padding: 80px 0;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    padding: 0 15px 15px;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 12px;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #7d3c98;
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+/* フッター */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-section h3:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #8e44ad;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #8e44ad;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+}
+
+/* ハンバーガーメニュー */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #8e44ad;
+    transition: all 0.3s ease;
+}
+
+/* ハンバーガーメニューアクティブ時のスタイル */
+.hamburger-menu span.active:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu span.active:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu span.active:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .hamburger-menu {
+        display: flex;
+        order: 3;
+    }
+    
+    .nav-menu {
+        position: static;
+        max-height: none;
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .logo {
+        flex: 1;
+        order: 1;
+    }
+    
+    .cart {
+        order: 2;
+    }
+    
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .product-info {
+        padding: 30px 0;
+    }
+    
+    .purchase-banner {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .purchase-link {
+        font-size: 1rem;
+    }
+    
+    .product-table th, .product-table td {
+        padding: 12px 10px;
+    }
+    
+    .content-grid {
+        gap: 20px;
+    }
+    
+    .content-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .features-grid {
+        gap: 20px;
+    }
+    
+    .feature-item {
+        padding: 15px;
+    }
+    
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-section p {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .campaign-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 40px 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.login-btn a {
+    background-color: #8e44ad;
+}
+
+.login-btn a:hover {
+    background-color: #7d3c98;
+}
+
+.primary-btn {
+    background-color: #8e44ad;
+}
+
+.primary-btn:hover {
+    background-color: #7d3c98;
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+.secondary-btn {
+    color: #8e44ad;
+    border: 2px solid #8e44ad;
+}
+
+/* テストセクションのスタイル */
+.test-section {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.test-preview {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.test-question {
+    margin-bottom: 30px;
+}
+
+.test-question h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.test-question p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.test-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.option-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.option-buttons button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #8e44ad;
+    background-color: white;
+    color: #8e44ad;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option-buttons button:hover {
+    background-color: #8e44ad;
+    color: white;
+}
+
+.test-preview .primary-btn {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 商品情報テーブルのスタイル */
+.product-info {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.purchase-banner {
+    background-color: #fffbeb;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+.purchase-link {
+    color: #0099cc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.purchase-link:hover {
+    text-decoration: underline;
+}
+
+.product-table {
+    margin-bottom: 30px;
+}
+
+.product-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.product-table th, .product-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.product-table th {
+    width: 25%;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-table td {
+    width: 75%;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.special-price {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.highlight-price {
+    color: #ff3333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.campaign-tag {
+    color: #ff3333;
+}
+
+.sample-link {
+    color: #0099cc;
+    text-decoration: none;
+}
+
+.sample-link:hover {
+    text-decoration: underline;
+}
+
+.campaign-banner {
+    background-color: #fff9e6;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.campaign-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #ff9900;
+}
+
+.campaign-btn {
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-btn:hover {
+    background-color: #ffbb00;
+    transform: translateY(-2px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .product-table th {
+        width: 30%;
+    }
+    
+    .product-table td {
+        width: 70%;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-table table, 
+    .product-table thead, 
+    .product-table tbody, 
+    .product-table th, 
+    .product-table td, 
+    .product-table tr {
+        display: block;
+    }
+    
+    .product-table th {
+        width: 100%;
+        text-align: left;
+        border-bottom: none;
+    }
+    
+    .product-table td {
+        width: 100%;
+        border-top: none;
+    }
+    
+    .highlight-price {
+        font-size: 1.3rem;
+    }
+}
+
+/* モバイル表示の最適化 */
+@media (max-width: 768px) {
+    /* 全体のフォントサイズ調整 */
+    body {
+        font-size: 16px;
+    }
+    
+    /* コンテナの余白調整 */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* ヘッダーの調整 */
+    header .container {
+        padding: 10px 15px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    /* ヒーローセクションの調整 */
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    /* 商品情報テーブルの調整 */
+    .product-info {
+        padding: 30px 0;
+    }
+    
+    .purchase-banner {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .purchase-link {
+        font-size: 1rem;
+    }
+    
+    .product-table th, .product-table td {
+        padding: 12px 10px;
+    }
+    
+    /* 商品カードの調整 */
+    .content-grid {
+        gap: 20px;
+    }
+    
+    .content-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* 特徴セクションの調整 */
+    .features-grid {
+        gap: 20px;
+    }
+    
+    .feature-item {
+        padding: 15px;
+    }
+    
+    /* CTAセクションの調整 */
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-section p {
+        font-size: 0.9rem;
+    }
+    
+    /* ボタンの調整 */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .campaign-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    /* フッターの調整 */
+    footer {
+        padding: 40px 0 20px;
+    }
+}
+
+/* さらに小さい画面用 */
+@media (max-width: 480px) {
+    /* 商品テーブルのさらなる最適化 */
+    .product-table {
+        font-size: 0.9rem;
+    }
+    
+    .highlight-price {
+        font-size: 1.2rem;
+    }
+    
+    /* 特徴アイテムを縦並びに */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* ボタンをより大きく */
+    .btn, .campaign-btn {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    /* 余白の調整 */
+    .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    /* タッチターゲットの拡大 */
+    nav ul li a, 
+    .footer-section ul li a {
+        padding: 12px;
+        display: block;
+    }
+    
+    /* ハンバーガーメニューの調整 */
+    .hamburger-menu {
+        width: 25px;
+        height: 18px;
+    }
+} 
