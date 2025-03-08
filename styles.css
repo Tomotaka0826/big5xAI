@@ -648,11 +648,11 @@ footer {
     }
 }
 
-/* モバイル表示の最適化 */
+/* モバイル表示の全体的な改善 */
 @media (max-width: 768px) {
     /* 全体のフォントサイズ調整 */
     body {
-        font-size: 16px;
+        font-size: 15px;
     }
     
     /* コンテナの余白調整 */
@@ -662,7 +662,7 @@ footer {
     
     /* ヘッダーの調整 */
     header .container {
-        padding: 10px 15px;
+        padding: 15px;
     }
     
     .logo h1 {
@@ -675,126 +675,494 @@ footer {
     }
     
     .hero h2 {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
+        font-size: 2rem;
+        line-height: 1.3;
     }
     
     .hero p {
         font-size: 1rem;
-        margin-bottom: 20px;
+        padding: 0 10px;
     }
     
-    /* 商品情報テーブルの調整 */
-    .product-info {
-        padding: 30px 0;
+    /* 商品情報テーブルのモバイル最適化 */
+    .product-table {
+        overflow-x: auto; /* 横スクロールを可能に */
     }
     
-    .purchase-banner {
-        padding: 12px;
-        margin-bottom: 20px;
-    }
-    
-    .purchase-link {
-        font-size: 1rem;
+    .product-table table {
+        width: 100%;
+        min-width: 280px; /* 最小幅を設定 */
     }
     
     .product-table th, .product-table td {
-        padding: 12px 10px;
-    }
-    
-    /* 商品カードの調整 */
-    .content-grid {
-        gap: 20px;
-    }
-    
-    .content-card h3 {
-        font-size: 1.1rem;
-    }
-    
-    /* 特徴セクションの調整 */
-    .features-grid {
-        gap: 20px;
-    }
-    
-    .feature-item {
-        padding: 15px;
-    }
-    
-    /* CTAセクションの調整 */
-    .cta-section {
-        padding: 40px 0;
-    }
-    
-    .cta-section h2 {
-        font-size: 1.5rem;
-    }
-    
-    .cta-section p {
+        padding: 10px;
         font-size: 0.9rem;
     }
     
-    /* ボタンの調整 */
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+    /* 特別オファーの調整 */
+    .special-offer {
+        padding: 12px 15px;
+        margin: 15px 0;
     }
     
-    .campaign-btn {
-        padding: 12px 30px;
+    .offer-title {
         font-size: 1rem;
+    }
+    
+    .offer-description {
+        font-size: 0.9rem;
+    }
+    
+    /* キャンペーンバナーの調整 */
+    .campaign-banner {
+        padding: 15px;
+        margin: 20px 0;
+    }
+    
+    .campaign-banner p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    /* 性格特性カードの調整 */
+    .content-grid {
+        grid-template-columns: 1fr; /* スマホでは1列に */
+        gap: 20px;
+    }
+    
+    .personality-image {
+        height: 180px; /* 画像の高さを少し小さく */
+    }
+    
+    .content-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .content-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+    /* ボタンのタッチエリア拡大 */
+    .btn {
+        padding: 12px 25px;
+        min-height: 44px; /* タッチターゲットの最小高さ */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
     
     /* フッターの調整 */
     footer {
         padding: 40px 0 20px;
     }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-section ul li a {
+        padding: 8px 0;
+        display: block; /* タッチエリアを拡大 */
+    }
 }
 
-/* さらに小さい画面用 */
-@media (max-width: 480px) {
-    /* 商品テーブルのさらなる最適化 */
-    .product-table {
-        font-size: 0.9rem;
+/* さらに小さい画面用（iPhone SE等） */
+@media (max-width: 375px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .product-table th, .product-table td {
+        padding: 8px;
+        font-size: 0.85rem;
     }
     
     .highlight-price {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
-    /* 特徴アイテムを縦並びに */
-    .features-grid {
-        grid-template-columns: 1fr;
+    .btn {
+        width: 100%; /* 小さい画面では幅いっぱいに */
+        padding: 12px 15px;
     }
     
-    /* ボタンをより大きく */
-    .btn, .campaign-btn {
-        width: 100%;
-        text-align: center;
-        padding: 15px;
+    .feature-item {
+        padding: 20px 15px;
+    }
+}
+
+/* タッチデバイス用の調整 */
+@media (hover: none) {
+    /* ホバー効果をタップ効果に変更 */
+    .content-card:active,
+    .feature-item:active,
+    .btn:active {
+        transform: scale(0.98);
+    }
+    
+    /* タップ領域の拡大 */
+    .read-more {
+        padding: 10px 0;
+        display: inline-block;
+    }
+}
+
+/* 画像をクリック可能に見せるスタイル */
+.personality-image {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    position: relative;
+    z-index: 10; /* 重なり順序を上げる */
+}
+
+.content-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.content-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5; /* 画像より下の重なり順序 */
+}
+
+.personality-image:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+
+/* カードのサイズと配置を調整 */
+.content-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* グリッドレイアウトの調整 */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+}
+
+.personality-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover .personality-image {
+    transform: scale(1.05);
+}
+
+/* CTAセクションの余白とレイアウトを改善 */
+.cta-section {
+    padding: 80px 0;  /* 上下の余白を増やす */
+    background-color: #f9f4ff;  /* 薄い紫色の背景 */
+    border-radius: 10px;
+    margin: 60px 20px;  /* セクション全体の外側の余白 */
+    text-align: center;
+}
+
+.cta-section .container {
+    max-width: 800px;  /* コンテンツ幅を制限 */
+    padding: 0 30px;  /* 左右の内側の余白 */
+}
+
+.cta-section h2 {
+    font-size: 2.2rem;  /* 見出しを大きく */
+    margin-bottom: 25px;
+    line-height: 1.3;
+    color: #333;
+}
+
+.cta-section h2 span {
+    color: #8e44ad;
+    font-weight: 700;
+    display: inline-block;  /* 改行を許可 */
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;  /* 説明文とボタンの間の余白を増やす */
+    line-height: 1.7;
+    color: #555;
+    max-width: 600px;  /* テキスト幅を制限 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-section .btn {
+    padding: 15px 40px;  /* ボタンを大きく */
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-section .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(142, 68, 173, 0.4);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 60px 0;
+        margin: 40px 15px;
+    }
+    
+    .cta-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-section p {
         font-size: 1rem;
     }
     
-    /* 余白の調整 */
-    .section-title {
-        font-size: 1.4rem;
+    .cta-section .btn {
+        padding: 12px 30px;
+    }
+}
+
+/* スマホ表示時のみ改行を表示 */
+.sp-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sp-only {
+        display: inline;
+    }
+}
+
+/* 特徴セクションの全体的な改善 */
+.features {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 40px 20px;
+}
+
+.features .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.features .section-title span {
+    color: #8e44ad;
+    font-weight: 700;
+}
+
+/* 特徴グリッドのレイアウト改善 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+/* 特徴アイテムのデザイン改善 */
+.feature-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* アイコンのデザイン改善 */
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #f0e6f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #8e44ad;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    background-color: #8e44ad;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* 特徴タイトルのデザイン改善 */
+.feature-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* 特徴説明文のデザイン改善 */
+.feature-item p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* レスポンシブ対応の改善 */
+@media (max-width: 768px) {
+    .features {
+        padding: 60px 0;
+        margin: 30px 15px;
+    }
+    
+    .features .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .features-grid {
+        gap: 20px;
+    }
+    
+    .feature-item {
+        padding: 25px 20px;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
         margin-bottom: 15px;
     }
     
-    .section-description {
-        font-size: 0.9rem;
+    .feature-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .feature-item {
         margin-bottom: 20px;
     }
-    
-    /* タッチターゲットの拡大 */
-    nav ul li a, 
-    .footer-section ul li a {
-        padding: 12px;
-        display: block;
-    }
-    
-    /* ハンバーガーメニューの調整 */
-    .hamburger-menu {
-        width: 25px;
-        height: 18px;
-    }
+}
+
+/* ライトボックス機能のスタイル - 背景を白色に変更 */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.95); /* 背景を白色に変更 */
+    animation: fadeIn 0.3s;
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-img {
+    display: block;
+    width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 影を軽くする */
+    animation: zoomIn 0.3s;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #333; /* 閉じるボタンの色を暗くする */
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(240, 240, 240, 0.8); /* 閉じるボタンの背景を明るく */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-lightbox:hover {
+    background-color: rgba(220, 220, 220, 0.9); /* ホバー時の背景色 */
+    transform: scale(1.1);
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.9)}
+    to {transform: scale(1)}
 } 
